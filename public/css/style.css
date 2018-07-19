@@ -1,0 +1,119 @@
+body{
+    background-color: #ddf2ff;
+    margin: 0 auto;
+}
+.text-muted{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 4%;
+    text-decoration: none;       
+}
+.text-muted:hover{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 4%;
+    text-decoration: none;
+    color: #f79521;                 
+}
+.nav{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.lienPages{
+    color: #003150;
+    text-decoration: none;   
+}
+.lienPages:hover{
+    background-color: #f79521;
+    text-decoration: none;   
+}
+h1{
+    color: #003150;
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+.action{
+    font-size: 16px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.stylebouton {
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 5px;
+    border: solid thin #929292;  
+    text-shadow: none;  
+    background-color: #f79521;
+    color: #003150;  
+    padding: 3px 8px;  
+    margin: 2%;  
+    text-decoration: none;
+    font-size: 15px;
+}
+.btn{
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 5px;
+    border: solid thin #929292;  
+    text-shadow: none;  
+    background-color: #f79521;
+    color: #003150;  
+    padding: 3px 8px;  
+    margin-top: 5%;  
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    height: 75%;
+}
+.btn1{
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 5px;
+    border: solid thin #929292;  
+    text-shadow: none;  
+    background-color: #f79521;
+    color: #003150;  
+    padding: 3px 8px;  
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    height: 75%;
+    margin-bottom: 2%;
+}
+.stylebouton {
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 5px;
+    border: solid thin #929292;  
+    text-shadow: none;  
+    background-color: #f79521;
+    color: #003150;  
+    padding: 3px 8px;  
+    margin: 2%;  
+    text-decoration: none;
+    font-size: 15px;
+}
+.commande{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.choix{
+    margin: 0;
+}
+.retour{
+    color: #003150;
+    text-decoration: none;
+   
+}
+.retour:hover{
+    color: #f79521;
+    text-decoration: none; 
+   
+}
+input{
+    display: block;
+    margin-bottom: 2%;
+}

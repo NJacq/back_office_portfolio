@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Informations{% endblock %}
+
+{% block body %}
+    <h1>Informations</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ information.id }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ information.description }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ information.tel }}</td>
+            </tr>
+            <tr>
+                <th>Tel_interna</th>
+                <td>{{ information.telInterna }}</td>
+            </tr>
+            <tr>
+                <th>Cv_url</th>
+                <td>{{ information.cvUrl }}</td>
+            </tr>
+        </tbody>
+    </table>
+<p>
+    <a href="{{ path('informations_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('informations_edit', {'id': information.id}) }}">Modifier</a>
+
+    {{ include('informations/_delete_form.html.twig') }}</p>
+{% endblock %}

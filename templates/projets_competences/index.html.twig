@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProjetsCompetences{% endblock %}
+
+{% block body %}
+<div>
+    <a class="text-muted" href="{{ path('logout') }}">Déconnexion</a>
+</div>
+<div class="nav">
+    <a class="lienPages" href="/admin/projets/">Projets</a>
+    <a class="lienPages" href="/admin/images">Images</a>
+    <a class="lienPages" href="/admin/competences">Compétences</a>
+    <a class="lienPages" href="/admin/projets_images/">Projets_images</a>
+    <a class="lienPages" href="">Projets_compétences</a>
+    <a class="lienPages" href="/admin/informations/">Informations</a>
+</div>
+
+    <h1>ProjetsCompetences</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Id_projet</th>
+                <th>Id_competence</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for projets_competence in projets_competences %}
+            <tr>
+                <td>{{ projets_competence.id }}</td>
+                <td>{{ projets_competence.idProjet }}</td>
+                <td>{{ projets_competence.idCompetence }}</td>
+                <td>
+                    <div class="action">
+                        <a class="stylebouton" href="{{ path('projets_competences_show', {'id': projets_competence.id}) }}">Voir</a>
+                        <a class="stylebouton" href="{{ path('projets_competences_edit', {'id': projets_competence.id}) }}">Modifier</a>
+                        {{ include('projets_competences/_delete_form.html.twig') }}
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="commande">
+        <a class="stylebouton" href="{{ path('projets_competences_new') }}">Créer un nouveau projet_competence</a>
+    </div>
+{% endblock %}

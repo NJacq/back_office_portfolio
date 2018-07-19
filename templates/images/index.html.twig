@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Images{% endblock %}
+
+{% block body %}
+
+<a class="text-muted" href="{{ path('logout') }}">Déconnexion</a>
+
+<div class="nav">
+    <a class="lienPages" href="/admin/projets/">Projets</a>
+    <a class="lienPages" href="">Images</a>
+    <a class="lienPages" href="/admin/competences">Compétences</a>
+    <a class="lienPages" <a href="/admin/projets_images/">Projets_images</a>
+    <a class="lienPages" <a href="/admin/projets_competences/">Projets_compétences</a>
+    <a class="lienPages" href="/admin/informations/">Informations</a>
+</div>
+
+    <h1>Images</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Url</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for image in images %}
+            <tr>
+                <td>{{ image.id }}</td>
+                <td>{{ image.nom }}</td>
+                <td>{{ image.url }}</td>
+                <td>
+                <div class="action">
+                    <a class="stylebouton" href="{{ path('images_show', {'id': image.id}) }}">Voir</a>
+                    <a class="stylebouton" href="{{ path('images_edit', {'id': image.id}) }}">Modifier</a>
+                    {{ include('images/_delete_form.html.twig') }}
+                </div>
+                </td>
+            </tr> 
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="commande">
+        <a class="stylebouton" href="{{ path('images_new') }}">Ajouter une image</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+ 
+{% block body %}
+    Bienvenue {{ app.user.username }} !
+<div>
+    <a class="text-muted" href="{{ path('logout') }}">Déconnexion</a>
+</div>
+<div class="nav">
+<a href="/admin/projets/">Projets</a>
+<a href="">Images</a>
+<a href="/admin/competences">Compétences</a>
+<a href="/admin/projets_images/">Projets_images</a>
+<a href="/admin/projets_competences/">Projets_compétences</a>
+<a href="/admin/informations/">Informations</a>
+</div>
+        
+{% endblock %}
