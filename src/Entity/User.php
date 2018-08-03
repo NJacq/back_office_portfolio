@@ -123,5 +123,10 @@ class User implements UserInterface
     public function eraseCredentials()
     {
     }
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
     
 }

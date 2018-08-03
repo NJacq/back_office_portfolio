@@ -1,26 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Modifier les compétences{% endblock %}
+{% block title %}Modifier les competences{% endblock %}
 
 {% block body %}
+    <div>
+        <a class="text-muted" href="{{ path('logout') }}">Déconnexion</a>
+    </div>
+    <div class="nav">
+        <a class="lienPages" href="{{ path('projets_index') }}">Projets</a>
+        <a class="lienPages" href="{{ path('images_index') }}">Images</a>
+        <a class="lienPages" href="{{ path('competences_index') }}">Compétences</a>
+        <a class="lienPages" href="{{ path('informations_index') }}">Informations</a>
+    </div>
+    <h1>Modifier les competences</h1>
 
-<div>
-    <a class="text-muted" href="{{ path('logout') }}">Déconnexion</a>
-</div>
-<div class="nav">
-<a class="lienPages" href="/admin/projets/">Projets</a>
-<a class="lienPages" href="/admin/images/">Images</a>
-<a class="lienPages" href="/admin/competences">Compétences</a>
-<a class="lienPages" href="/admin/projets_images/">Projets_images</a>
-<a class="lienPages" href="/admin/projets_competences/">Projets_compétences</a>
-<a class="lienPages" href="/admin/informations/">Informations</a>
-</div>
-    <h1>Modifier les compétences</h1>
-<div class="choix">
-    {{ include('competences/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
-    {# {{ include('competences/_delete_form.html.twig') }} #}
-</div>
+    <div class="choix">
+        {{ include('competences/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+        {# {{ include('competences/_delete_form.html.twig') }} #}
+    </div>
     <a class="retour" href="{{ path('competences_index') }}">Retour à la liste</a>
-
-    
 {% endblock %}

@@ -3,6 +3,15 @@
 {% block title %}Nouveaux projets{% endblock %}
 
 {% block body %}
+<div>
+    <a class="text-muted" href="{{ path('logout') }}">Déconnexion</a>
+</div>
+<div  class="nav">
+    <a class="lienPages" href="{{ path('projets_index') }}">Projets</a>
+    <a class="lienPages" href="{{ path('images_index') }}">Images</a>
+    <a class="lienPages" href="{{ path('competences_index') }}">Compétences</a>
+    <a class="lienPages" href="{{ path('informations_index') }}">Informations</a>
+</div>
     <h1>Créer un nouveau projet</h1>
 
     {{ include('projets/_form.html.twig') }}

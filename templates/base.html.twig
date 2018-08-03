@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Bienvenue!{% endblock %}</title>
         {% block stylesheets %}
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         {% endblock %}
     </head>
     <body>

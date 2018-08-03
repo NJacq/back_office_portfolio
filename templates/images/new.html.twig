@@ -3,9 +3,17 @@
 {% block title %}Nouvelle image{% endblock %}
 
 {% block body %}
+<a class="text-muted" href="{{ path('logout') }}">Déconnexion</a>
+
+<div class="nav">
+    <a class="lienPages" href="{{ path('projets_index') }}">Projets</a>
+    <a class="lienPages" href="{{ path('images_index') }}">Images</a>
+    <a class="lienPages" href="{{ path('competences_index') }}">Compétences</a>
+    <a class="lienPages" href="{{ path('informations_index') }}">Informations</a>
+</div>
     <h1>Ajouter une image</h1>
 
     {{ include('images/_form.html.twig') }}
 
-    <a href="{{ paths ('images_index') }}">Retour à la liste</a>
+    <a href="{{ path('images_index') }}">Retour à la liste</a>
 {% endblock %}

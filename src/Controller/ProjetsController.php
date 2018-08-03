@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProjetsController extends Controller
 {
     /**
-     * @Route("/", name="projets_index", methods="GET")
+     * @Route("/admin/projets", name="projets_index", methods="GET")
      */
     public function index(ProjetsRepository $projetsRepository): Response
     {

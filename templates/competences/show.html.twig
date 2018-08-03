@@ -3,6 +3,14 @@
 {% block title %}Compétences{% endblock %}
 
 {% block body %}
+<a class="text-muted" href="{{ path('logout') }}">Déconnexion</a>
+
+<div class="nav">
+    <a class="lienPages" href="{{ path('projets_index') }}">Projets</a>
+    <a class="lienPages" href="{{ path('images_index') }}">Images</a>
+    <a class="lienPages" href="{{ path('competences_index') }}">Compétences</a>
+    <a class="lienPages" href="{{ path('informations_index') }}">Informations</a>
+</div>
     <h1>Compétences</h1>
 
     <table class="table">
@@ -21,10 +29,11 @@
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('competences_index') }}">Retour à la liste</a>
-
-    <a href="{{ path('competences_edit', {'id': competence.id}) }}">Modifier</a>
-
+<div class="commande1">
+    <a class="stylebouton1" href="{{ path('competences_edit', {'id': competence.id}) }}">Modifier</a>
     {{ include('competences/_delete_form.html.twig') }}
+</div>
+<div>
+    <a href="{{ path('competences_index') }}">Retour à la liste</a>
+</div>
 {% endblock %}

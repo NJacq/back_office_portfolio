@@ -14,6 +14,7 @@ class ImagesType extends AbstractType
         $builder
             ->add('nom')
             ->add('url')
+            ->add('projets')
         ;
     }
 

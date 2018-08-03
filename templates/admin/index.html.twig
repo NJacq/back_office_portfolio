@@ -2,16 +2,14 @@
  
 {% block body %}
     Bienvenue {{ app.user.username }} !
-<div>
-    <a class="text-muted" href="{{ path('logout') }}">Déconnexion</a>
-</div>
-<div class="nav">
-<a href="/admin/projets/">Projets</a>
-<a href="">Images</a>
-<a href="/admin/competences">Compétences</a>
-<a href="/admin/projets_images/">Projets_images</a>
-<a href="/admin/projets_competences/">Projets_compétences</a>
-<a href="/admin/informations/">Informations</a>
-</div>
+    <div>
+        <a class="text-muted" href="{{ path('logout') }}">Déconnexion</a>
+    </div>
+    <div class="nav">
+        <a class="lienPages" href="{{ path('projets_index') }}">Projets</a>
+        <a class="lienPages" href="{{ path('images_index') }}">Images</a>
+        <a class="lienPages" href="{{ path('competences_index') }}">Compétences</a>
+        <a class="lienPages" href="{{ path('informations_index') }}">Informations</a>
+    </div>
         
 {% endblock %}

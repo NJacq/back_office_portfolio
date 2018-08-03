@@ -87,11 +87,4 @@ class ImagesController extends Controller
 
         return $this->redirectToRoute('images_index');
     }
-    /**
-     * @Route("/logout", name="logout")
-     */
-    public function logout()
-    {
-
-    }
 }

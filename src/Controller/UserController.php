@@ -16,4 +16,15 @@ class UserController extends Controller
             'controller_name' => 'UserController',
         ]);
     }
+
+  /**
+     * @Route("/", name="home")
+     */
+    public function home()
+    {
+        return $this->render('user/index.html.twig', [
+            'controller_name' => 'UserController',
+        ]);
+    }
+
 }

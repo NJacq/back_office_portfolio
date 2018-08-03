@@ -1,21 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Compétences{% endblock %}
+{% block title %}Competences{% endblock %}
 
 {% block body %}
-
-<div>
-    <a class="text-muted" href="{{ path('logout') }}">Déconnexion</a>
-</div>
-<div class="nav">
-<a class="lienPages" href="/admin/projets/">Projets</a>
-<a class="lienPages" href="/admin/images/">Images</a>
-<a class="lienPages" href="">Compétences</a>
-<a class="lienPages" href="/admin/projets_images/">Projets_images</a>
-<a class="lienPages" href="/admin/projets_competences/">Projets_compétences</a>
-<a class="lienPages" href="/admin/informations/">Informations</a>
-</div>
-    <h1>Compétences</h1>
+    <div>
+        <a class="text-muted" href="{{ path('logout') }}">Déconnexion</a>
+    </div>
+    <div class="nav">
+       <a class="lienPages" href="{{ path('projets_index') }}">Projets</a>
+        <a class="lienPages" href="{{ path('images_index') }}">Images</a>
+        <a class="lienPages" href="{{ path('competences_index') }}">Compétences</a>
+        <a class="lienPages" href="{{ path('informations_index') }}">Informations</a>
+    </div>
+    <h1>Competences</h1>
 
     <table class="table">
         <thead>
@@ -47,7 +44,8 @@
         {% endfor %}
         </tbody>
     </table>
-<div class="commande">
-    <a class="stylebouton" href="{{ path('competences_new') }}">Créer une compétence</a>
-</div>
+
+    <div class="commande">
+        <a class="stylebouton1" href="{{ path('competences_new') }}">Créer une compétence</a>
+    </div>
 {% endblock %}

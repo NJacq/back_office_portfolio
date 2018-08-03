@@ -24,7 +24,6 @@ class Kernel extends BaseKernel
     {
         return $this->getProjectDir().'/var/log';
     }
-
     public function registerBundles()
     {
         $contents = require $this->getProjectDir().'/config/bundles.php';

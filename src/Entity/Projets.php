@@ -2,9 +2,13 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ApiResource()
  * @ORM\Entity(repositoryClass="App\Repository\ProjetsRepository")
  */
 class Projets
@@ -22,7 +26,7 @@ class Projets
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
@@ -35,6 +39,27 @@ class Projets
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $adresse;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $github;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Competences", inversedBy="projets")
+     */
+    private $competences;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Images", mappedBy="projets")
+     */
+    private $Images;
+
+    public function __construct()
+    {
+        $this->competences = new ArrayCollection();
+        $this->Images = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -87,5 +112,77 @@ class Projets
         $this->adresse = $adresse;
 
         return $this;
+    }
+
+    public function getGithub(): ?string
+    {
+        return $this->github;
+    }
+
+    public function setGithub(?string $github): self
+    {
+        $this->github = $github;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Competences[]
+     */
+    public function getCompetences(): Collection
+    {
+        return $this->competences;
+    }
+
+    public function addCompetence(Competences $competence): self
+    {
+        if (!$this->competences->contains($competence)) {
+            $this->competences[] = $competence;
+        }
+
+        return $this;
+    }
+
+    public function removeCompetence(Competences $competence): self
+    {
+        if ($this->competences->contains($competence)) {
+            $this->competences->removeElement($competence);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Images[]
+     */
+    public function getImages(): Collection
+    {
+        return $this->Images;
+    }
+
+    public function addImage(Images $image): self
+    {
+        if (!$this->Images->contains($image)) {
+            $this->Images[] = $image;
+            $image->setProjets($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Images $image): self
+    {
+        if ($this->Images->contains($image)) {
+            $this->Images->removeElement($image);
+            // set the owning side to null (unless already changed)
+            if ($image->getProjets() === $this) {
+                $image->setProjets(null);
+            }
+        }
+
+        return $this;
+    }
+    public function __toString(){
+        return (string) $this->nom;
     }
 }

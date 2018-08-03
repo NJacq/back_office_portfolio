@@ -14,6 +14,7 @@ class CompetencesType extends AbstractType
         $builder
             ->add('nom')
             ->add('adresse')
+            ->add('projets')
         ;
     }
 
